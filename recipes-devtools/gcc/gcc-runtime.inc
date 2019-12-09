@@ -157,6 +157,9 @@ PACKAGES = "\
     libitm \
     libitm-dev \
     libitm-staticdev \
+    libmpx \
+    libmpx-dev \
+    libmpx-staticdev \
 "
 # The base package doesn't exist, so we clear the recommends.
 RRECOMMENDS_${PN}-dbg = ""
