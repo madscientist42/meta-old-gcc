@@ -1,0 +1,6 @@
+# Tell Yocto that we explictly want it to use GCC 8.x here...
+GCCVERSION = "8.%"
+
+# Technically, since the layer provides an older BINUTILS to work with
+# we're going to force this as well...
+BINUVERSION = "2.30%"

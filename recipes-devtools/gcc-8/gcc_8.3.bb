@@ -1,4 +1,4 @@
-require recipes-devtools/gcc/gcc-${PV}.inc
+require gcc-${PV}.inc
 require gcc-target.inc
 
 # Building with thumb enabled on armv4t armv5t fails with
@@ -6,5 +6,9 @@ require gcc-target.inc
 # | gcc-4.8.1-r0/gcc-4.8.1/gcc/cp/decl.c:7442:(.text.unlikely+0x318): additional relocation overflows omitted from the output
 ARM_INSTRUCTION_SET_armv4 = "arm"
 ARM_INSTRUCTION_SET_armv5 = "arm"
+
+ARMFPARCHEXT_armv6 = "${@'+fp' if d.getVar('TARGET_FPU') == 'hard' else ''}"
+ARMFPARCHEXT_armv7a = "${@'+fp' if d.getVar('TARGET_FPU') == 'hard' else ''}"
+ARMFPARCHEXT_armv7ve = "${@'+fp' if d.getVar('TARGET_FPU') == 'hard' else ''}"
 
 BBCLASSEXTEND = "nativesdk"
